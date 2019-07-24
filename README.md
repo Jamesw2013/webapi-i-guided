@@ -12,7 +12,7 @@ The code for the guided project will be written in a single file for simplicity.
 
 ## Project Setup
 
-- [ ] fork and clone this repository.
+- [x] fork and clone this repository.
 - [ ] **CD into the folder** where you cloned **your fork**.
 - [ ] type `yarn` or `npm i` to download dependencies.
 
