@@ -42,6 +42,24 @@ server.post('/hubs', (request, response) => {
     })
 });
 
+server.put('/hubs/:id', (request, response) => {
+    const {id} = request.params;
+    const hubInfo = request.body;
+    console.log(hubInfo);
+
+    db.update(id, hubInfo)
+    .then(updated => {
+        if(updated) {
+            response.status(200).json({success:true, updated});
+        } else {
+            response.status(404).json({success:false, message: 'I cannot find the hub you are looking for'});
+        }
+    })
+    .catch(err => {
+        response.status(500).json({success:false, err});
+    });
+})
+
 server.delete('/hubs/:id', (request,response) => {
     // DELETE /hubs/<id>
     const {id} = request.params;
